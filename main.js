@@ -6,6 +6,7 @@ var rickSingleton = require("./rick");
 var mortySingleton = require("./morty");
 var jerrySingleton = require("./jerry");
 var universeSingleton = require("./universe");
+var portalGunModule = require("./portalgun");
 /*
  * Crea el objeto Rick
  */
@@ -45,10 +46,14 @@ console.assert(jerry.speak() == "Tengo una colección de monedas antiguas raras!
 //  * Crea 2 Rick-clones y 1 clon de Morty
 //  * y asocia como partner de ese Morty a uno de los Rick-clones.  
 //  */
-var clonRick = Object.create(protoRick);
-clonRick.id = "C-1338";
-var otroRick = Object.create(protoRick);
-otroRick.id = "D-390";
+var createRickClon = function () { 
+    var clon = Object.create(protoRick);
+    clon.id = "C-15"+Math.floor(Math.random()*10);
+    return clon;
+ }
+var clonRick = createRickClon();
+var otroRick = createRickClon();
+
 var clonMorty = Object.create(protoMorty);
 clonMorty.setPartner(clonRick);
 
@@ -106,8 +111,11 @@ console.assert(universo.length == 1);
 //  * Rick dispara la pistola y se añade al universo la dimensión "Fart"
 //  *  */
 
-// console.assert(gun);
-// console.assert(gun.historial.length == 1);
+var gun = portalGunModule.portalGun();
+gun.scanNewReality("Tierra");
+
+console.assert(gun);
+console.assert(gun.historial.length == 1);
 
 // console.assert("Fart" in universo);
 // console.assert(universo.length == 2);

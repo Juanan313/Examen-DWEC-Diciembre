@@ -7,7 +7,6 @@ Universe.prototype.addReality = function (realityName) {
     this.length += 1;
 }
 
-// Hacer el prototipo de Morty único
 function singletonUniverse() { 
     const prototipo = new Universe();
 
