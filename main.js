@@ -5,6 +5,7 @@
 var rickSingleton = require("./rick");
 var mortySingleton = require("./morty");
 var jerrySingleton = require("./jerry");
+var universeSingleton = require("./universe");
 /*
  * Crea el objeto Rick
  */
@@ -76,10 +77,10 @@ console.assert(clonMorty.partner == clonRick);
 // /**
 //  * Crea el objeto universo
 //  */
-
-// console.assert(universo);
-// console.assert(Object.getPrototypeOf(universo) != Array.prototype);
-// console.assert(universo.length == 0);
+var universo = universeSingleton.protoUniverse().get();
+console.assert(universo);
+console.assert(Object.getPrototypeOf(universo) != Array.prototype);
+console.assert(universo.length == 0);
 
 // /**
 //  * Crea la primera dimensión, el `Array` mundo `Tierra`, 
