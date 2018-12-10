@@ -202,7 +202,10 @@ Object.defineProperty(doofous, "extend",
         });
 doofous.extend(jerry);
 doofous.id = "J-19-Z7";
-doofous.monedas = doofous.coinCollection.getCoinCollection(); 
+doofous.monedas = doofous.coinCollection.getCoinCollection();
+doofous.speak = function() {
+    return this.messageOnSpeak;
+}
 
 
 console.assert(doofous);
