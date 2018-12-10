@@ -44,26 +44,32 @@ console.assert(jerry.speak() == "Tengo una colección de monedas antiguas raras!
 //  * Crea 2 Rick-clones y 1 clon de Morty
 //  * y asocia como partner de ese Morty a uno de los Rick-clones.  
 //  */
+var clonRick = Object.create(protoRick);
+clonRick.id = "C-1338";
+var otroRick = Object.create(protoRick);
+otroRick.id = "D-390";
+var clonMorty = Object.create(protoMorty);
+clonMorty.setPartner(clonRick);
 
-// console.assert(clonRick);
-// console.assert(protoRick != clonRick);
-// console.assert(Object.getPrototypeOf(clonRick) == protoRick);
-// console.assert(clonRick.id != "C-137");
-// console.assert(clonRick.ondas == "altas");
-// console.assert(clonRick.habla == "Es Rick-dículo!");
+console.assert(clonRick);
+console.assert(protoRick != clonRick);
+console.assert(Object.getPrototypeOf(clonRick) == protoRick);
+console.assert(clonRick.id != "C-137");
+console.assert(clonRick.ondas == "altas");
+console.assert(clonRick.habla() == "Es Rick-dículo!");
 
-// console.assert(otroRick);
-// console.assert(protoRick != otroRick);
-// console.assert(Object.getPrototypeOf(otroRick) == protoRick);
-// console.assert(otroRick.id != "C-137");
-// console.assert(otroRick.ondas == "altas");
-// console.assert(otroRick.habla == "Es Rick-dículo!");
+console.assert(otroRick);
+console.assert(protoRick != otroRick);
+console.assert(Object.getPrototypeOf(otroRick) == protoRick);
+console.assert(otroRick.id != "C-137");
+console.assert(otroRick.ondas == "altas");
+console.assert(otroRick.habla() == "Es Rick-dículo!");
 
-// console.assert(clonMorty);
-// console.assert(clonMorty != protoMorty);
-// console.assert(Object.getPrototypeOf(clonMorty) == protoMorty);
-// console.assert(clonMorty.ondas == "bajas");
-// console.assert(clonMorty.partner == clonRick);
+console.assert(clonMorty);
+console.assert(clonMorty != protoMorty);
+console.assert(Object.getPrototypeOf(clonMorty) == protoMorty);
+console.assert(clonMorty.ondas == "bajas");
+console.assert(clonMorty.partner == clonRick);
 
 
 
