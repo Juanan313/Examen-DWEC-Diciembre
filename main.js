@@ -117,6 +117,9 @@ gun.scanNewReality("Tierra");
 console.assert(gun);
 console.assert(gun.historial.length == 1);
 
+// universo = gun.trigger(universo, "Fart");
+// gun.scanNewReality("Fart");
+
 // console.assert("Fart" in universo);
 // console.assert(universo.length == 2);
 
@@ -174,8 +177,36 @@ console.assert(gun.historial.length == 1);
 //  * Crea un Doofus Rick segun se indica en el README
 //  */
 
-// console.assert(doofous);
-// console.assert(doofous.id == "J-19-Z7");
-// console.assert(doofous.ondas == "altas");
-// console.assert(doufus.monedas.length == 4);
-// console.assert(doufous.speak() == "Tengo una colección de monedas antiguas raras!");
+var doofous = createRickClon();
+
+Object.defineProperty(doofous, "extend",
+        // Define Object.prototype.extend
+        {
+            writable: true,
+            // Make it nonenumerable
+            enumerable: false,
+            configurable: true,
+            value: function(o) {
+
+                var names = Object.getOwnPropertyNames(o);
+                // Loop through them
+                for(var i = 0; i < names.length; i++) {
+                    // Skip props already in this object
+                    // Get property description from o
+                    var desc = Object.getOwnPropertyDescriptor(o,names[i]);
+                    // Use it to create property on this
+                    Object.defineProperty(this, names[i], desc);
+                }
+            }
+            
+        });
+doofous.extend(jerry);
+doofous.id = "J-19-Z7";
+doofous.monedas = doofous.coinCollection.getCoinCollection(); 
+
+
+console.assert(doofous);
+console.assert(doofous.id == "J-19-Z7");
+console.assert(doofous.ondas == "altas");
+console.assert(doofous.monedas.length == 4);
+console.assert(doofous.speak() == "Tengo una colección de monedas antiguas raras!");

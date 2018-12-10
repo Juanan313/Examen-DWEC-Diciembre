@@ -1,17 +1,3 @@
-// var jerry = (function (){
-
-//   var rd2dCoinCollection = ["RD2D-Coin", "RD2D-Coin", "RD2D-Coin", "RD2D-Coin"];
-
-//   return {
-//     setCoinCollection : function (newValue) {
-//         rd2dCoinCollection = newValue;
-//     },
-//     getCoinCollection : function () {
-//      return rd2dCoinCollection; 
-//     }
-//   }; 
-// }());
-
 class Jerry {
      constructor () {
         this.id = "Jerry";
@@ -35,8 +21,6 @@ class Jerry {
          return this.messageOnSpeak;
         };
 }
-
-var jerry = new Jerry();
 
 // Hacer el prototipo de Jerry único
 function singletonJerry() { 

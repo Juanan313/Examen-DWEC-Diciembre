@@ -12,7 +12,10 @@ PortalGun.prototype.scan = function () {
       })
 }
 
-PortalGun.prototype.trigger = function () { }
+PortalGun.prototype.trigger = function (universe, newReality) {
+    universe.addReality(newReality)
+    return universe;
+ }
 
 
 // Exportar el módulo
