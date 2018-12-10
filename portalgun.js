@@ -7,9 +7,13 @@ PortalGun.prototype.scanNewReality = function (realityName) {
 }
 
 PortalGun.prototype.scan = function () {
-    this.historial.forEach( function (reality) {
-        console.log(reality);
-      })
+    // this.historial.forEach( function (reality) {
+    //     console.log(reality);
+    //   })
+    
+    for (var i = 0; i < this.historial.length; i++) {
+        console.log(this.historial[i]);
+    }
 }
 
 PortalGun.prototype.trigger = function (universe, newReality) {

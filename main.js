@@ -145,20 +145,25 @@ console.assert(gun.historial.length == 2);
 //  * la lista de dimensiones, desde la más reciente a la más
 //  * antigua: Fart, Tierra.
 //  */
-
-// console.log(gun.scan());
-// console.assert(gun.historial.length == 2);
+console.log("/--------Primer Scan -------/"+"\n");
+console.log(gun.scan());
+console.log("\n");
+console.assert(gun.historial.length == 2);
 
 
 // /**
 //  * Rick dispara la pistola y se añade al universo la dimensión "Coaches".
 //  */
 
-// console.assert("Coach" in universo);
-// console.assert(universo.length == 3);
+var result = protoRick.dispara(gun, universo, "Coaches");
+universo = result.universe;
+gun = result.portalgun;
+
+console.assert("Coaches" in universo);
+console.assert(universo.length == 3);
 
 // /**
-//  * Los cuatro cruzan a la dimensión "Coach".
+//  * Los 5 cruzan a la dimensión "Coach".
 //  * 
 //  * Has de eliminarlos del mundo "Fart" y meterlos en la nueva dimensión "Coach".
 //  * 
@@ -168,11 +173,15 @@ console.assert(gun.historial.length == 2);
 //  * Coaches, Fart, Tierra.
 //  */
 
-// console.assert(universo["Coaches"].length == 5);
-// console.assert(universo["Fart"].length == 0);
-// console.assert(universo["Tierra"].length == 1);
-// console.log(gun.scan());
-// console.assert(gun.historial.length == 3);
+universo.cruzarDimension(pjsQueCruzan, gun.historial[1], gun.historial[0]);
+
+console.assert(universo["Coaches"].length == 5);
+console.assert(universo["Fart"].length == 0);
+console.assert(universo["Tierra"].length == 1);
+console.log("/-----Segundo Scan-----/"+"\n")
+console.log(gun.scan());
+console.log("\n");
+console.assert(gun.historial.length == 3);
 
 
 
