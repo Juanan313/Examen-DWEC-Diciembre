@@ -8,9 +8,10 @@ Universe.prototype.addReality = function (realityName) {
 }
 
 Universe.prototype.cruzarDimension = function(pjs, actualReality, newReality) {
+    var universo = this;
     pjs.forEach(function (pj) { 
-        this[actualReality].splie(this[actualReality].indexOf(pj), 1);
-        this[newReality].unshift(pj);
+        universo[actualReality].splice(universo[actualReality].indexOf(pj), 1);
+        universo[newReality].unshift(pj);
      });
 }
 

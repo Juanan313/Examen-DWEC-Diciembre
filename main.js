@@ -119,26 +119,26 @@ console.assert(gun.historial.length == 1);
 
 var result = protoRick.dispara(gun, universo, "Fart");
 universo = result.universe;
-gun = result.portalGun;
-// universo = gun.trigger(universo, "Fart");
-// gun.scanNewReality("Fart");
+gun = result.portalgun;
 
 console.assert("Fart" in universo);
 console.assert(universo.length == 2);
 
-// /**
-//  * Todos SALVO Jerry cruzan a la dimensión "Fart".
-//  * Has de eliminarlos del mundo tierra y meterlos en la nueva dimensión "Fart".
-//  * 
-//  * Es necesaria una función cruzarDimension para ser reutilizada posteriormente.
-//  * Puedes situarla en aquel componente que estimes más adecuado.
-//  * 
-//  * La pistola añade a su historial "Fart".
-//  */
+/**
+ * Todos SALVO Jerry cruzan a la dimensión "Fart".
+ * Has de eliminarlos del mundo tierra y meterlos en la nueva dimensión "Fart".
+ * 
+ * Es necesaria una función cruzarDimension para ser reutilizada posteriormente.
+ * Puedes situarla en aquel componente que estimes más adecuado.
+ * 
+ * La pistola añade a su historial "Fart".
+ */
+var pjsQueCruzan = [protoRick, protoMorty, clonRick, otroRick, clonMorty];
+ universo.cruzarDimension(pjsQueCruzan, gun.historial[1], gun.historial[0]);
 
-// console.assert(universo["Fart"].length == 5);
-// console.assert(universo["Tierra"].length == 1);
-// console.assert(gun.historial.length == 2);
+console.assert(universo["Fart"].length == 5);
+console.assert(universo["Tierra"].length == 1);
+console.assert(gun.historial.length == 2);
 
 // /**
 //  * Si haces un scan de la pistola, se muestra en consola

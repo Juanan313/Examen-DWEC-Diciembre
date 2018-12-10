@@ -13,7 +13,7 @@ Rick.prototype.dispara = function(portalGun, universo, newReality) {
     universo = portalGun.trigger(universo, newReality);
     portalGun.scanNewReality(newReality);
     var result = {};
-    result["gun"] = portalGun;
+    result["portalgun"] = portalGun;
     result["universe"] = universo;
     return result;
 }
