@@ -87,12 +87,15 @@ console.assert(universo.length == 0);
 //  * mete en él a los 6 objetos que has creado (Rick, Morty y Jerry, 
 //  * 2 rick-clones y 1 clon de Morty) y añádelo al objeto `universo`.
 //  */
+universo.addReality("Tierra");
+var tierra = [protoRick, protoMorty, jerry, clonRick, otroRick, clonMorty];
+universo["Tierra"] = tierra;
 
-// console.assert(tierra);
-// console.assert(Object.getPrototypeOf(tierra) == Array.prototype);
-// console.assert(tierra.length == 6);
-// console.assert("Tierra" in universo);
-// console.assert(universo.length == 1);
+console.assert(tierra);
+console.assert(Object.getPrototypeOf(tierra) == Array.prototype);
+console.assert(tierra.length == 6);
+console.assert("Tierra" in universo);
+console.assert(universo.length == 1);
 
 // /**
 //  * Crea el objeto portal gun / pistola de portales.
