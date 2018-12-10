@@ -9,6 +9,15 @@ Rick.prototype.habla = function() {
     return this.messageOnTalk;
 };
 
+Rick.prototype.dispara = function(portalGun, universo, newReality) {
+    universo = portalGun.trigger(universo, newReality);
+    portalGun.scanNewReality(newReality);
+    var result = {};
+    result["gun"] = portalGun;
+    result["universe"] = universo;
+    return result;
+}
+
 // Hacer el prototipo de Rick único
 function singletonRick() { 
     const prototipo = new Rick();

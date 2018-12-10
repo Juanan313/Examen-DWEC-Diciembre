@@ -117,11 +117,14 @@ gun.scanNewReality("Tierra");
 console.assert(gun);
 console.assert(gun.historial.length == 1);
 
+var result = protoRick.dispara(gun, universo, "Fart");
+universo = result.universe;
+gun = result.portalGun;
 // universo = gun.trigger(universo, "Fart");
 // gun.scanNewReality("Fart");
 
-// console.assert("Fart" in universo);
-// console.assert(universo.length == 2);
+console.assert("Fart" in universo);
+console.assert(universo.length == 2);
 
 // /**
 //  * Todos SALVO Jerry cruzan a la dimensión "Fart".

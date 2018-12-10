@@ -13,7 +13,8 @@ PortalGun.prototype.scan = function () {
 }
 
 PortalGun.prototype.trigger = function (universe, newReality) {
-    universe.addReality(newReality)
+    universe.addReality(newReality);
+    universe[newReality] = [];
     return universe;
  }
 
