@@ -3,15 +3,12 @@
  * Importa los módulos de tus clases 
  */
 var rickSingleton = require("./rick");
-var protoRick = rickSingleton.rickC137().get();
-
 var mortySingleton = require("./morty");
-var protoMorty = mortySingleton.earthmorty(protoRick).get();
-protoMorty.setPartner(protoRick);
-
+var jerrySingleton = require("./jerry");
 /*
  * Crea el objeto Rick
  */
+var protoRick = rickSingleton.rickC137().get();
 
 console.assert(protoRick);
 console.assert(protoRick.id == "C-137");
@@ -21,6 +18,8 @@ console.assert(protoRick.habla() == "Es Rick-dículo!");
 /**
  * Crea el objeto Morty
  */
+var protoMorty = mortySingleton.earthmorty().get();
+protoMorty.setPartner(protoRick);
 
 console.assert(protoMorty);
 console.assert(protoMorty.id == "earthMorty");
@@ -29,15 +28,17 @@ console.assert(protoMorty.partner == protoRick);
 console.assert(protoMorty.habla() == "Oohh man!");
 
 
-// /**
-//  * Crea el objeto Jerry
-//  */
+/**
+ * Crea el objeto Jerry
+ */
+var jerry = jerrySingleton.jerry().get();
+jerry.monedas = jerry.coinCollection.getCoinCollection();
 
-// console.assert(jerry);
-// console.assert(jerry.id = "Jerry");
-// console.assert(jerry.monedas.length == 4);
-// console.assert(jerry.monedas[0] == "R2-D2");
-// console.assert(jerry.speak() == "Tengo una colección de monedas antiguas raras!");
+console.assert(jerry);
+console.assert(jerry.id = "Jerry");
+console.assert(jerry.monedas.length == 4);
+console.assert(jerry.monedas[0] == "R2-D2");
+console.assert(jerry.speak() == "Tengo una colección de monedas antiguas raras!");
 
 // /**
 //  * Crea 2 Rick-clones y 1 clon de Morty
